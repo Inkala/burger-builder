@@ -1,12 +1,13 @@
 import React from 'react';
 
 import shortid from 'shortid';
-import classes from './OrderSummary.module.scss';
+// import classes from './OrderSummary.module.scss';
 
 const OrderSummary = props => {
   const ingredientSummary = Object.keys(props.ingredients).map(igKey => (
     <li key={shortid.generate()}>
-      <span>{igKey}</span> {props.ingredients[igKey]}
+      <span style={{ textTransform: 'capitalize' }}>{igKey}: </span>
+      {props.ingredients[igKey]}
     </li>
   ));
   return (
