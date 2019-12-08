@@ -7,12 +7,12 @@ import classes from './SideDrawer.module.scss';
 
 const SideDrawer = props => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
-  if (props.open) {
+  if (props.show) {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
   return (
     <React.Fragment>
-      <Backdrop show={props.open} clicked={props.closed} />
+      <Backdrop show={props.show} clicked={props.closed} />
       <div className={attachedClasses.join(' ')}>
         <div className={classes.Logo}>
           <Logo />
