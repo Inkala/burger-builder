@@ -1,8 +1,9 @@
 import React from 'react';
-import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-import Layout from './containers/Layout/Layout';
 
-function App() {
+import Layout from './containers/Layout/Layout';
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+
+const App = () => {
   return (
     <div>
       <Layout>
