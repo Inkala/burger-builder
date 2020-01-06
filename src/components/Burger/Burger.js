@@ -3,14 +3,17 @@ import React from 'react';
 import classes from './Burger.module.scss';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
-const Burger = props => {  
-  let transformedIngredients = Object.keys(props.ingredients).map(igKey =>
-    [...Array(props.ingredients[igKey])].map((_, i) => (
-      <BurgerIngredient key={igKey + i} type={igKey} />
-    ))
-  ).reduce((arr, el) => (arr.concat(el)
-  ), []);
-if (transformedIngredients.length === 0) {
+const Burger = props => {
+  let transformedIngredients
+  if (props.ingredients) {
+    transformedIngredients = Object.keys(props.ingredients).map(igKey =>
+      [...Array(props.ingredients[igKey])].map((_, i) => (
+        <BurgerIngredient key={igKey + i} type={igKey} />
+      ))
+    ).reduce((arr, el) => (arr.concat(el)
+    ), []);
+  }
+if (!transformedIngredients || transformedIngredients.length === 0 ) {
   transformedIngredients = <p>Please start adding ingredients!</p>
 }
   return (
