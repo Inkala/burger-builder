@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Burguer from '../../Burger/Burger';
+import Burger from '../../Burger/Burger';
 import Button from '../../UI/Button/Button';
 import classes from'./CheckoutSummary.module.scss';
 
@@ -15,7 +15,7 @@ const CheckoutSummary = props => {
     <div className={classes.CheckoutSummary}>
       <h1>Enjoy your burger!</h1>
       <div style={divStyles}>
-        <Burguer ingredients={props.ingredients} />
+        <Burger ingredients={props.ingredients} />
       </div>
       <Button btnType="Danger" clicked={props.checkoutCancelled}>
         CANCEL
